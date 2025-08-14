@@ -267,7 +267,7 @@ function initializeWorkScroller() {
     
     
     let gapValue = getComputedStyle(seq).gap || getComputedStyle(seq).columnGap || "2.5rem";
-    clone.style.marginLeft = `calc(${gapValue} * 3)`;
+    clone.style.marginLeft = `calc(${gapValue} * 5)`;
 
     track.appendChild(clone);
 
