@@ -99,7 +99,7 @@ function populateWorks(works) {
     
     container.innerHTML = ''; // Clear existing
     works.forEach((work, originalIndex) => {
-        if (originalIndex < 7) {
+        if (originalIndex < 5) {
             const workCard = document.createElement('a');
             workCard.href = "work-details.html?id=" + originalIndex;
             workCard.className = 'works-card card-hover group rounded-2xl bg-surface-light border border-light overflow-hidden';
