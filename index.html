@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transcendent 3D - Web Developer & UX Designer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0B0B12',
+                        surface: { light: '#0F0F18', dark: '#10101A' },
+                        accent: { from: '#8B5CF6', to: '#6366F1' },
+                        glow: 'rgba(139,92,246,0.50)',
+                    },
+                    boxShadow: {
+                        glow: '0 4px 14px 0 rgba(139, 92, 246, 0.5)',
+                        soft: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+                    },
+                    borderRadius: { 'xl': '28px' }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        body { background-color: #0B0B12; color: white; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; }
+        .text-secondary { color: rgba(255,255,255,0.70); }
+        .text-tertiary { color: rgba(255,255,255,0.60); }
+        .text-caption { color: rgba(255,255,255,0.50); }
+        .border-light { border-color: rgba(255,255,255,0.10); }
+        .gradient-text { background: linear-gradient(90deg, #8B5CF6, #6366F1); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        .gradient-bg { background: linear-gradient(90deg, #8B5CF6, #6366F1); }
+        .glow-effect { box-shadow: 0 0 20px rgba(139, 92, 246, 0.5); }
+        .arrow-hover { transition: transform 0.3s ease; }
+        .arrow-hover:hover .arrow { transform: translateX(4px); }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { border-color: rgba(255,255,255,0.20); transform: translateY(-2px); }
+        .btn-hover { transition: all 0.3s ease; }
+        .btn-hover:hover { transform: translateY(-1px); box-shadow: 0 4px 14px 0 rgba(139, 92, 246, 0.5); }
+        .nav-link { position: relative; }
+        .nav-link::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -4px; left: 0; background: linear-gradient(90deg, #8B5CF6, #6366F1); transition: width 0.3s ease; }
+        .nav-link:hover::after { width: 100%; }
+        input:focus, textarea:focus, select:focus { outline: none; box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.5); }
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            .arrow-hover, .card-hover, .btn-hover, .nav-link::after { transition: none; }
+        }
+        .works-scroller { position: relative; overflow: hidden; mask-image: linear-gradient(to right, transparent 0, black 8%, black 92%, transparent 100%); -webkit-mask-image: linear-gradient(to right, transparent 0, black 8%, black 92%, transparent 100%); }
+        .works-track { display: flex; width: max-content; will-change: transform; animation: works-marquee var(--works-speed, 40s) linear infinite; }
+        .works-scroller:hover .works-track, .works-scroller:focus-within .works-track { animation-play-state: paused; }
+        .works-seq { display: flex; gap: 2.5rem; padding-block: .25rem; }
+        .works-card { flex: 0 0 360px; max-width: 360px; transform-origin: center center; transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease; }
+        .works-card.is-center { transform: translateY(-4px) scale(1.06); box-shadow: 0 30px 120px -30px rgba(139,92,246,0.5); border-color: rgba(255,255,255,0.22); }
+        @keyframes works-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+        
+        /* Blog scroller styles - similar to works scroller */
+        .blog-scroller { position: relative; overflow: hidden; mask-image: linear-gradient(to right, transparent 0, black 8%, black 92%, transparent 100%); -webkit-mask-image: linear-gradient(to right, transparent 0, black 8%, black 92%, transparent 100%); }
+        .blog-track { display: flex; width: max-content; will-change: transform; animation: blog-marquee var(--blog-speed, 40s) linear infinite; }
+        .blog-scroller:hover .blog-track, .blog-scroller:focus-within .blog-track { animation-play-state: paused; }
+        .blog-seq { display: flex; gap: 2.5rem; padding-block: .25rem; }
+        .blog-card { flex: 0 0 360px; max-width: 360px; transform-origin: center center; transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease; }
+        .blog-card.is-center { transform: translateY(-4px) scale(1.06); box-shadow: 0 30px 120px -30px rgba(139,92,246,0.5); border-color: rgba(255,255,255,0.22); }
+        @keyframes blog-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+        @media (prefers-reduced-motion: reduce) { .works-track { animation: none; } .blog-track { animation: none; } }
+    </style>
+</head>
+
+<body class="antialiased">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-primary/90 backdrop-blur-md border-b border-light">
+        <div class="max-w-7xl mx-auto px-6">
+            <nav class="flex items-center justify-between py-4">
+                <a href="index.html" class="flex items-center">
+                    <div class="w-9 h-9 rounded-full gradient-bg flex items-center justify-center">
+                        <span id="logo-initial" class="font-bold text-white">T</span>
+                    </div>
+                </a>
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#services" class="nav-link text-white hover:text-white">Services</a>
+                    <a href="#works" class="nav-link text-white hover:text-white">Works</a>
+                    <a href="#experience" class="nav-link text-white hover:text-white">Experience</a>
+                    <a href="#skills" class="nav-link text-white hover:text-white">Skills</a>
+                    <a href="#blog" class="nav-link text-white hover:text-white">Blog</a>
+                    <a href="#contact" class="nav-link text-white hover:text-white">Contact</a>
+                </div>
+                <a href="#contact" class="btn-hover px-6 py-2 rounded-full gradient-bg text-white font-medium shadow-glow">Let's Work</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="py-16 md:py-24">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <!-- Image first on mobile -->
+                    <div class="md:w-1/2 flex justify-center order-1 md:order-2">
+                        <div class="relative">
+                            <div id="hero-image-container" class="w-64 h-80 md:w-80 md:h-96 rounded-2xl bg-surface-light border border-light overflow-hidden">
+                                <!-- Hero image will be injected here -->
+                            </div>
+                            <div class="absolute inset-0 rounded-2xl glow-effect pointer-events-none"></div>
+                        </div>
+                    </div>
+
+                    <!-- Text second on mobile, first on desktop -->
+                    <div class="md:w-1/2 order-2 md:order-1">
+                        <span id="hero-greeting" class="uppercase tracking-widest text-tertiary">I am Transcendent</span>
+                        <h1 id="hero-title" class="text-4xl md:text-5xl font-bold tracking-tight mt-4 mb-6">Web Developer <span class="text-secondary">+</span> <span class="gradient-text">UX Designer</span></h1>
+                        <p id="hero-description" class="text-secondary text-lg mb-8">Specializing in 3D visual design, mobile apps, and modern web applications. I create immersive digital experiences that blend aesthetics with functionality.</p>
+                        <div id="stats-container" class="inline-flex items-center bg-surface-light rounded-full px-6 py-2 border border-light mb-8 space-x-4"></div>
+                        <div class="flex gap-4">
+                            <a href="#works" class="btn-hover px-6 py-3 rounded-xl border border-light bg-surface-light text-white font-medium hover:bg-surface-dark">Recent Works</a>
+                            <a href="#contact" class="btn-hover px-6 py-3 rounded-xl gradient-bg text-white font-medium shadow-glow">Hire Me</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-16 md:py-24 bg-surface-light">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <span class="uppercase tracking-widest text-tertiary">What I do</span>
+                    <h2 class="text-3xl md:text-4xl font-bold tracking-tight mt-2">My Quality Services</h2>
+                </div>
+                <div id="services-container" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Service cards will be injected here by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Works Section -->
+        <section id="works" class="py-16 md:py-24">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="mb-10 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-bold tracking-tight">My Recent Works</h2>
+                        <p class="text-secondary mt-2 max-w-2xl">A selection of 3D, web app, and mobile projects that showcase my design and development expertise.</p>
+                    </div>
+                    <a href="all-works.html" class="btn-hover px-6 py-2 rounded-xl border border-light bg-surface-light text-white font-medium hover:bg-surface-dark whitespace-nowrap">
+                        Show All Works
+                    </a>
+                </div>
+
+                <div class="works-scroller" aria-label="Project gallery (auto-scrolling)">
+                    <div class="works-track" style="--works-speed: 38s">
+                        <div id="works-seq" class="works-seq">
+                            <!-- Work cards will be injected here by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience & Education Section -->
+        <section id="experience" class="py-16 md:py-24 bg-surface-light">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div>
+                        <h2 class="text-3xl font-bold tracking-tight mb-8">My Experience</h2>
+                        <div id="experience-container" class="space-y-8">
+                            <!-- Experience items will be injected here -->
+                        </div>
+                    </div>
+                    <div>
+                        <h2 class="text-3xl font-bold tracking-tight mb-8">My Education</h2>
+                        <div id="education-container" class="space-y-8">
+                            <!-- Education items will be injected here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-16 md:py-24">
+            <div class="max-w-7xl mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-12">My Skills</h2>
+                <div id="skills-container" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                    <!-- Skill items will be injected here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="py-16 md:py-24 bg-surface-light">
+            <div class="max-w-7xl mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-12">Client Testimonials</h2>
+                <div id="testimonials-container" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Testimonial cards will be injected here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Section -->
+        <section id="blog" class="py-16 md:py-24">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="mb-10">
+                    <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Latest Articles</h2>
+                    <p class="text-secondary mt-2 max-w-2xl">Insights and thoughts on web development, design trends, and emerging technologies.</p>
+                </div>
+                <div class="blog-scroller" aria-label="Articles gallery (auto-scrolling)">
+                    <div class="blog-track" style="--blog-speed: 38s">
+                        <div id="blog-seq" class="blog-seq">
+                            <!-- Blog cards will be injected here by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 md:py-24 bg-surface-light">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-8">Get In Touch</h2>
+                        
+                        <!-- Formspree Contact Form -->
+                        <form action="https://formspree.io/f/manbkeqe" method="POST" class="space-y-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium mb-2">Name</label>
+                                <input type="text" id="name" name="name" required
+                                    class="w-full px-4 py-3 rounded-xl bg-surface-dark border border-light focus:border-accent-from focus:ring-2 focus:ring-accent-from/50">
+                            </div>
+
+                            <div>
+                                <label for="email" class="block text-sm font-medium mb-2">Email</label>
+                                <input type="email" id="email" name="email" required
+                                    class="w-full px-4 py-3 rounded-xl bg-surface-dark border border-light focus:border-accent-from focus:ring-2 focus:ring-accent-from/50">
+                            </div>
+
+                            <div>
+                                <label for="budget" class="block text-sm font-medium mb-2">Budget</label>
+                                <select id="budget" name="budget"
+                                        class="w-full px-4 py-3 rounded-xl bg-surface-dark border border-light focus:border-accent-from focus:ring-2 focus:ring-accent-from/50">
+                                    <option value="">Select budget range</option>
+                                    <option value="100-500">$100 - $500</option>
+                                    <option value="500-1k">$500 - $1,000</option>
+                                    <option value="1-2k">$1,000 - $5,000</option>
+                                    <option value="2k+">$5,000+</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Project Type</label>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <label class="flex items-center">
+                                        <input type="radio" name="projectType" value="3D/Visualization"
+                                            class="h-4 w-4 text-accent-from focus:ring-accent-from border-light">
+                                        <span class="ml-2">3D/Visualization</span>
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="radio" name="projectType" value="Web App UI"
+                                            class="h-4 w-4 text-accent-from focus:ring-accent-from border-light">
+                                        <span class="ml-2">Web App UI</span>
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="radio" name="projectType" value="Mobile App UI"
+                                            class="h-4 w-4 text-accent-from focus:ring-accent-from border-light">
+                                        <span class="ml-2">Mobile App UI</span>
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="radio" name="projectType" value="Other"
+                                            class="h-4 w-4 text-accent-from focus:ring-accent-from border-light">
+                                        <span class="ml-2">Other</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="message" class="block text-sm font-medium mb-2">Message</label>
+                                <textarea id="message" name="message" rows="4" required
+                                        class="w-full px-4 py-3 rounded-xl bg-surface-dark border border-light focus:border-accent-from focus:ring-2 focus:ring-accent-from/50"></textarea>
+                            </div>
+
+                            <button type="submit"
+                                    class="btn-hover w-full px-6 py-3 rounded-xl gradient-bg text-white font-medium shadow-glow">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Contact Info Section -->
+                    <div>
+                        <div class="bg-surface-dark rounded-2xl p-8 border border-light h-full">
+                            <h3 class="text-xl font-bold mb-6">Contact Information</h3>
+                            <p class="text-secondary mb-8">
+                                Have a project in mind or want to discuss potential collaboration?
+                                Feel free to reach out through the form or directly via email or phone.
+                            </p>
+                            <div class="space-y-6">
+                                <div class="flex items-start">
+                                    <svg class="w-5 h-5 mt-1 text-accent-from flex-shrink-0" fill="none"
+                                        stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                    </svg>
+                                    <span id="contact-email" class="ml-4">trancendent3dstudios@gmail.com</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <svg class="w-5 h-5 mt-1 text-accent-from flex-shrink-0" fill="none"
+                                        stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                                    </svg>
+                                    <span id="contact-phone" class="ml-4">+91-8847288036</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <svg class="w-5 h-5 mt-1 text-accent-from flex-shrink-0" fill="none"
+                                        stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                    </svg>
+                                    <span id="contact-location" class="ml-4">Bahadurgarh, Haryana, India</span>
+                                </div>
+                            </div>
+                            <div class="mt-12">
+                                <h4 class="font-medium mb-4">Follow me</h4>
+                                <div id="socials-container-contact" class="flex space-x-4">
+                                    <!-- Social links populated by JS -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-8 border-t border-light">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <p class="text-caption">
+                    © <span id="currentYear"></span> <span id="footer-name">Gerold</span>. All rights reserved.
+                </p>
+                <div id="socials-container-footer" class="flex space-x-6 mt-4 md:mt-0">
+                    <!-- Social links will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Load our custom script -->
+    <script src="app.js"></script>
+
+    <!-- Existing utility scripts -->
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+

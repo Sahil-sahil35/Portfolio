@@ -1,0 +1,260 @@
+{
+  "personalInfo": {
+    "name": "Transcendent",
+    "logoInitial": "T",
+    "jobTitle1": "Full Stack Developer",
+    "jobTitle2": "3d Designer",
+    "description": "Specializing in 3D visual design, mobile apps, and modern web applications. I create immersive digital experiences that blend aesthetics with functionality.",
+    "heroImage": "./assets/hero-image.png",
+    "contact": {
+      "email": "trancendent3dstudios@gmail.com",
+      "phone": "+91-88472-88036",
+      "location": "Bahadurgarh, Haryana, India"
+    },
+    "socials": {
+      "twitter": "#",
+      "linkedin": "https://linkedin.com/in/sahilsharma-transcendent3d",
+      "instagram": "https://www.instagram.com/transcendent3d",
+      "github": "https://github.com/Sahil-sahil35"
+    }
+  },
+  "stats": [
+    { "label": "Years Experience", "value": "4" },
+    { "label": "Projects", "value": "10+" },
+    { "label": "Happy Clients", "value": "15+" }
+  ],
+  "services": [
+    {
+      "id": "01",
+      "title": "3D Modeling & Visualization",
+      "description": "High-fidelity renders & interactive WebGL (Three.js/Blender) for immersive digital experiences."
+    },
+    {
+      "id": "02",
+      "title": "UI/UX Design",
+      "description": "Wireframes, prototypes, and user testing to create intuitive and engaging interfaces."
+    },
+    {
+      "id": "03",
+      "title": "Web App Design",
+      "description": "React/Next.js + Tailwind, performant and SEO-friendly web applications with modern aesthetics."
+    },
+    {
+      "id": "04",
+      "title": "Mobile App UI & Prototyping",
+      "description": "iOS/Android micro-interactions & developer handoff for seamless implementation."
+    }
+  ],
+
+
+
+
+
+
+
+
+
+
+
+  "works": [
+    {
+      "title": "3D Modern Weapon model",
+      "category": "3D",
+      "image": "./assets/Models/Weapon Design/work-image-1.png",
+      "images": [
+        "./assets/Models/Weapon Design/Untitled-4.jpg",
+        "./assets/Models/Weapon Design/work-image-1.png",
+        "./assets/Models/Weapon Design/Untitled-1.jpg",
+        "./assets/Models/Weapon Design/Untitled-2.jpg",
+        "./assets/Models/Weapon Design/Untitled-5.jpg",
+        "./assets/Models/Weapon Design/0006.png"
+      ],
+      "description": "Inferno Blanca – Sci-Fi Desert Eagle Pistol (Game-Ready 3D Asset)\nInferno Blanca is a stylized sci-fi reinterpretation of the Desert Eagle pistol. With baroque-inspired gold filigree and futuristic blue energy cores, this weapon fits perfectly in high-fantasy sci-fi universes, such as Warframe, Destiny, or Cyberpunk 2077-style settings.\nI came across some great weapon design while going through Pinterest looking for inspiration. This is a weapon design inspired by one of the weapon concepts I saw. This weapon model is up for sale now on my CGTrader and Fab profile.\nModeled in Blender3d.\nTextured in Substance Painter.",
+      "buy": "https://www.cgtrader.com/3d-models/military/gun/inferno-blanca-sci-fi-desert-eagle-pistol-game-ready-3d-asset",
+      "link": "https://www.instagram.com/p/DKWpsOcpFkN/?utm_source=ig_web_copy_link&igsh=dGRhMGRqZXN2Nm5m"
+    },
+
+
+
+    {
+      "title": "Sword and shield story board Design",
+      "category": "3D",
+      "image": "./assets/Models/short sword/work-image-2.png",
+      "images": [
+        "./assets/Models/short sword/work-image-2.png",
+        "./assets/Models/short sword/workbench.png",
+        "./assets/Models/short sword/workbench1.png"
+      ],
+      "description": "A highly detailed 3D weapon model designed for gaming and rendering purposes.",
+      "buy": "https://www.cgtrader.com/3d-models/military/melee/medieval-sword-prop-full-scene",
+      "link": "https://www.instagram.com/p/DKJqaXTpiy0/?utm_source=ig_web_copy_link&igsh=MTM3Y2JrcjAyNGxvYw=="
+    },
+
+
+    {
+      "title": "Water Treatment Engineer App",
+      "category": "App",
+      "image": "./assets/Apps/work-image-3.png",
+      "images":["./assets/Apps/work-image-3.png"],
+      "description": "Water Treatment Engineer (WTE) is a powerful and easy-to-use tool designed for professionals and students working in the field of water treatment and engineering. Whether you’re managing softener systems, DM plants, or sizing filter tanks, WTE gives you all the necessary calculations and reference tools in one app.",
+      "buy": "https://play.google.com/store/apps/details?id=com.sahil.tankmediacalculator",
+      "link": "https://play.google.com/store/apps/details?id=com.sahil.tankmediacalculator"
+    },
+
+
+
+    {
+      "title": "Deep Sea – 3D Environment Scene",
+      "category": "3D",
+      "image": "./assets/Models/underwater3d/render3.png",
+      "images":["./assets/Models/underwater3d/render3.png"],
+      "description": "A mysterious relic slumbers beneath the ocean’s surface a sword buried within forgotten ruins, guarded by the stillness of time and the life that’s bloomed around it.This project explores underwater atmosphere, lighting, and environment storytelling, blending ancient architecture with dynamic aquatic life.",
+      "buy": "#",
+      "link": "https://www.artstation.com/artwork/P6Y0Rr"
+    },
+
+
+
+
+    {
+      "title": "Blessed blade of the sea",
+      "category": "3D",
+      "image": "./assets/Models/ocean sword/render7.png",
+      "images":["./assets/Models/ocean sword/render7.png",
+                "./assets/Models/ocean sword/render6.png","./assets/Models/ocean sword/render4.png",
+              "./assets/Models/ocean sword/render3_with_bg.png"],
+      "description": "A mysterious relic slumbers beneath the ocean’s surface a sword buried within forgotten ruins, guarded by the stillness of time and the life that’s bloomed around it.This project explores underwater atmosphere, lighting, and environment storytelling, blending ancient architecture with dynamic aquatic life.",
+      "buy": "https://www.cgtrader.com/3d-models/military/melee/blessed-sea-fantasy-sword-3d-model-game-ready-pbr-textured",
+      "link": "https://www.instagram.com/p/DKKHOuRJf3j/?utm_source=ig_web_copy_link&igsh=MWlwdXFrMGhycjk3cg=="
+    },
+
+
+    {
+      "title": "AK-Venom Phantom",
+      "category": "3D",
+      "image": "./assets/Models/Gun pack/all.png",
+      "images":["./assets/Models/Gun pack/all.png",
+                "./assets/Models/Gun pack/cyan.png","./assets/Models/Gun pack/red.png",
+              "./assets/Models/Gun pack/ak6.png","./assets/Models/Gun pack/ak7.png"],
+      "description": "AK-Venom Phantom is a stylized, high-fidelity 3D model of a modern assault rifle, blending realism with a distinct cyber-fantasy aesthetic. Modeled in Blender and textured in Substance Painter, the weapon features a cracked neon-purple pattern over a dark base coat—evoking the look of corrupted energy surging through hardened alloy.This design makes it ideal for futuristic or dystopian FPS games, sci-fi animations, or collectible asset showcases.",
+      "buy": "https://www.cgtrader.com/3d-models/military/gun/ak-venom-phantom",
+      "link": "https://www.instagram.com/p/DKFlwlcSh7K/?utm_source=ig_web_copy_link&igsh=MTFiZ3QxNDJmMjgzcg=="
+    }
+
+
+  ],
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  "experience": [
+    { "role": "Freelance 3d Visualiser", "period": "2024–Now · House of Blue Bean" },
+    { "role": "Freelance web developer", "period": "2023–Now · Fiverr & upwork" },
+    { "role": "Freelance 3D artist", "period": "2021–now · fiver & upwork" }
+  ],
+  "education": [
+    { "course": "BSC computer science degree", "period": "2025-now · @Bits Pilani" },
+    { "course": "Btech CSE (AIML)", "period": "2023-2025 · @Chandigarh Univercity" },
+    { "course": "Full stack development cource", "period": "2023-2024 · Online" }
+  ],
+
+
+
+
+
+
+
+  "skills": [
+    "Blender",
+    "Substance Painter",
+    "Maya",
+    "Three.js",
+    "Python",
+    "C/C++, C#",
+    "Java",
+    "Figma",
+    "React",
+    "Next.js",
+    "Tailwind",
+    "Flutter",
+    "Kotlin"
+  ],
+
+
+
+
+
+
+
+  "testimonials": [
+    {
+      "quote": "Delivered High quiality Game asstes(A wepaon pack containing 10 different and unique weapons.), He provided all the weapons animation ready fully riged and also provided starting animations",
+      "author": "kamalideen",
+      "company": "Freelancer at fiverr"
+    },
+    {
+      "quote": "Provided high quiality room design for the our mobile game. Also helped us optimize the game with his wast knowledge in game desgin",
+      "author": "Aryan",
+      "company": "Student"
+    }
+  ],
+
+
+
+
+
+
+
+
+
+
+  "blog": [
+    {
+      "title": "Designing Depth: Subtle 3D for the Web",
+      "description": "Explore techniques for incorporating subtle 3D elements into web design without overwhelming the user experience.",
+      "image": "./assets/blog/blog-image-1.webp",
+      "link": "https://3d-artstation.blogspot.com/2025/08/Designing%20Depth.html"
+    },
+    {
+      "title": "The Rise of WebGL",
+      "description": "How to create performant WebGL experiences that enhance rather than detract from your website's core functionality.",
+      "image": "./assets/blog/blog-image-2.webp",
+      "link": "https://3d-artstation.blogspot.com/2025/08/The%20Rise%20of%20WebGL.html"
+    },
+
+    {
+      "title": "Boosting Web Performance with WebAssembly",
+      "description": "Dive into WebAssembly (Wasm) and learn how to use it to run high-performance code in the browser. This guide will demonstrate how to compile languages like C++ or Rust to Wasm for computationally intensive web tasks.",
+      "image": "https://private-us-east-1.manuscdn.com/sessionFile/ML2YzTDP2nloqqg3Ch72Qt/sandbox/r9hUHo6fT8y7TnfCNhDREp-images_1755177451372_na1fn_L2hvbWUvdWJ1bnR1L3dlYmFzc2VtYmx5X3BlcmZvcm1hbmNl.png?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvTUwyWXpURFAybmxvcXFnM0NoNzJRdC9zYW5kYm94L3I5aFVIbzZmVDh5N1RuZkNOaERSRXAtaW1hZ2VzXzE3NTUxNzc0NTEzNzJfbmExZm5fTDJodmJXVXZkV0oxYm5SMUwzZGxZbUZ6YzJWdFlteDVYM0JsY21admNtMWhibU5sLnBuZyIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc5ODc2MTYwMH19fV19&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=qp7HqD~CrfVK1DHCx0bFwVJSNoSrncbaU8tdAjq29yjACLXv~wdti7QzMd9QjL9QCQu-2IKmjY-ibD-SFk~VQcdk6rhu29BrRlPXeqoXmPuvIchSTcH4rPfkWZi3B4TMRTfAQGM7mRy1Jj7QYkXHwF~O46NWXSZaP4TM2bfT5jb41tmC53uYYEVU6aRP7DkOQ3ruWclwa5AoSnfUdTGYb-5gDBdglgHb6PPbpTLzQovaErGmk-I0uv-5oSMUx3gotZUUhdO7Qqkw4helF089RMxwzbueUOzkX8FLahY80eKgM~MybisIXbfiU4eMC~fyF1jvfCm2WccoM~UlL3fN8w__",
+      "link": "https://3d-artstation.blogspot.com/2025/08/boosting-web-performance-with.html"
+    },
+
+    {
+      "title": "How to Integrate AI for Personalized Web Experiences",
+      "description": "Explore practical methods for using AI to personalize user experiences on websites, from content recommendations to dynamic UI adjustments. This guide will cover choosing the right AI services and implementing them without overwhelming your development stack.",
+      "image": "https://private-us-east-1.manuscdn.com/sessionFile/ML2YzTDP2nloqqg3Ch72Qt/sandbox/r9hUHo6fT8y7TnfCNhDREp-images_1755177451145_na1fn_L2hvbWUvdWJ1bnR1L2FpX3BlcnNvbmFsaXplZF93ZWJfZXhwZXJpZW5jZQ.jpeg?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvTUwyWXpURFAybmxvcXFnM0NoNzJRdC9zYW5kYm94L3I5aFVIbzZmVDh5N1RuZkNOaERSRXAtaW1hZ2VzXzE3NTUxNzc0NTExNDVfbmExZm5fTDJodmJXVXZkV0oxYm5SMUwyRnBYM0JsY25OdmJtRnNhWHBsWkY5M1pXSmZaWGh3WlhKcFpXNWpaUS5qcGVnIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzk4NzYxNjAwfX19XX0_&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=EDIVX58im-rElc2Arct6GTbDNx-J62ZY7QG0gZwXNpY~AS6D4SZONkIx~gbGD0JXvzdXAmjHebTpKs0ReUD6yptm4FB-9~bur2~Sun0I3gAFiKliiYFmrpuw9NVIlqh-LAaRwPY9Ksx4eRzKhvzNn3ZM8VEvV5UtOXunj7Vb3-IMPdLxMqWbWF8-olzms0rrNspGx5RQIuZUzde63sH5qhbyLHy0hM5bWtcifInms9FF8YiRL6Q7wwDOuMLxWfB5DBweJULQ66RMCL4ge0okd7PMVlst40vkCKxH33lM769LnQ5z6NECmbgAx8N8C8t8vFn1giGXtwBbf0Bv~6nnOA__",
+      "link": "https://3d-artstation.blogspot.com/2025/08/how-to-integrate-ai-for-personalized.html"
+    },
+
+    {
+      "title": "Decentralizing the Web: A Developer's Guide to Blockchain Integration",
+      "description": "Understand the fundamentals of integrating blockchain into web and mobile applications. This guide will cover smart contracts, decentralized identity, and secure data handling for building the next generation of dApps.",
+      "image": "https://private-us-east-1.manuscdn.com/sessionFile/ML2YzTDP2nloqqg3Ch72Qt/sandbox/r9hUHo6fT8y7TnfCNhDREp-images_1755177451233_na1fn_L2hvbWUvdWJ1bnR1L2Jsb2NrY2hhaW5faW50ZWdyYXRpb24.jpg?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvTUwyWXpURFAybmxvcXFnM0NoNzJRdC9zYW5kYm94L3I5aFVIbzZmVDh5N1RuZkNOaERSRXAtaW1hZ2VzXzE3NTUxNzc0NTEyMzNfbmExZm5fTDJodmJXVXZkV0oxYm5SMUwySnNiMk5yWTJoaGFXNWZhVzUwWldkeVlYUnBiMjQuanBnIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzk4NzYxNjAwfX19XX0_&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=oA3lPeR3X7HeNRg0TbxectO5f-bF9JKdkiIU9~KdiWxFGiN7qqHCuh6TGg8opXNCkK3Fjy6qGtUbJtVkMIa4Vzcn5uJzSVZJeJY0VYILmlvJM83opDi~jHLyWzQbogWBNx-6pI14zDvAX4f-TW1MknZrCbMUwfe1gpkBNINB7Q-WmicNfUcC3YbBNnAZDF1kYYaslpIvnhvwRzQpesaEQ4cQFNFK-fjkt3uATKH4HCVQaSVBO5gavwsoOSP1RxkYpyvvzg0Fsmllcnve2IKx5PczCcUlsvp--3KFeUGQd~pXZtDtxvYkzE4-It40KDmv4OdX6pAW4j63JokJpdhH1g__",
+      "link":"https://3d-artstation.blogspot.com/2025/08/decentralizing-web-developers-guide-to.html"   
+    }
+
+
+
+
+  ]
+}

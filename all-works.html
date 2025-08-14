@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Works - Transcendent 3D</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0B0B12',
+                        surface: { light: '#0F0F18', dark: '#10101A' },
+                        accent: { from: '#8B5CF6', to: '#6366F1' },
+                        glow: 'rgba(139,92,246,0.50)',
+                    },
+                    boxShadow: {
+                        glow: '0 4px 14px 0 rgba(139, 92, 246, 0.5)',
+                        soft: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+                    },
+                    borderRadius: { 'xl': '28px' }
+                }
+            }
+        }
+    </script>
+        <style>
+        html { scroll-behavior: smooth; }
+        body { background-color: #0B0B12; color: white; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; }
+        .text-secondary { color: rgba(255,255,255,0.70); }
+        .text-tertiary { color: rgba(255,255,255,0.60); }
+        .text-caption { color: rgba(255,255,255,0.50); }
+        .border-light { border-color: rgba(255,255,255,0.10); }
+        .gradient-text { background: linear-gradient(90deg, #8B5CF6, #6366F1); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        .gradient-bg { background: linear-gradient(90deg, #8B5CF6, #6366F1); }
+        .glow-effect { box-shadow: 0 0 20px rgba(139, 92, 246, 0.5); }
+        .arrow-hover { transition: transform 0.3s ease; }
+        .arrow-hover:hover .arrow { transform: translateX(4px); }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { border-color: rgba(255,255,255,0.20); transform: translateY(-2px); }
+        .btn-hover { transition: all 0.3s ease; }
+        .btn-hover:hover { transform: translateY(-1px); box-shadow: 0 4px 14px 0 rgba(139, 92, 246, 0.5); }
+        .nav-link { position: relative; }
+        .nav-link::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -4px; left: 0; background: linear-gradient(90deg, #8B5CF6, #6366F1); transition: width 0.3s ease; }
+        .nav-link:hover::after { width: 100%; }
+        input:focus, textarea:focus, select:focus { outline: none; box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.5); }
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            .arrow-hover, .card-hover, .btn-hover, .nav-link::after { transition: none; }
+        }
+        .works-scroller { position: relative; overflow: hidden; mask-image: linear-gradient(to right, transparent 0, black 8%, black 92%, transparent 100%); -webkit-mask-image: linear-gradient(to right, transparent 0, black 8%, black 92%, transparent 100%); }
+        .works-track { display: flex; width: max-content; will-change: transform; animation: works-marquee var(--works-speed, 40s) linear infinite; }
+        .works-scroller:hover .works-track, .works-scroller:focus-within .works-track { animation-play-state: paused; }
+        .works-seq { display: flex; gap: 2.5rem; padding-block: .25rem; }
+        .works-card { flex: 0 0 360px; max-width: 360px; transform-origin: center center; transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease; }
+        .works-card.is-center { transform: translateY(-4px) scale(1.06); box-shadow: 0 30px 120px -30px rgba(139,92,246,0.5); border-color: rgba(255,255,255,0.22); }
+        @keyframes works-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+        
+        /* Blog scroller styles - similar to works scroller */
+        .blog-scroller { position: relative; overflow: hidden; mask-image: linear-gradient(to right, transparent 0, black 8%, black 92%, transparent 100%); -webkit-mask-image: linear-gradient(to right, transparent 0, black 8%, black 92%, transparent 100%); }
+        .blog-track { display: flex; width: max-content; will-change: transform; animation: blog-marquee var(--blog-speed, 40s) linear infinite; }
+        .blog-scroller:hover .blog-track, .blog-scroller:focus-within .blog-track { animation-play-state: paused; }
+        .blog-seq { display: flex; gap: 2.5rem; padding-block: .25rem; }
+        .blog-card { flex: 0 0 360px; max-width: 360px; transform-origin: center center; transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease; }
+        .blog-card.is-center { transform: translateY(-4px) scale(1.06); box-shadow: 0 30px 120px -30px rgba(139,92,246,0.5); border-color: rgba(255,255,255,0.22); }
+        @keyframes blog-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+        @media (prefers-reduced-motion: reduce) { .works-track { animation: none; } .blog-track { animation: none; } }
+    </style>
+</head>
+<body class="antialiased bg-primary text-white">
+
+    <!-- Include the same header as index.html -->
+    <header class="sticky top-0 z-50 bg-primary/90 backdrop-blur-md border-b border-light">
+        <div class="max-w-7xl mx-auto px-6">
+            <nav class="flex items-center justify-between py-4">
+                <a href="index.html" class="flex items-center">
+                    <div class="w-9 h-9 rounded-full gradient-bg flex items-center justify-center">
+                        <span id="logo-initial" class="font-bold text-white">T</span>
+                    </div>
+                </a>
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html#services" class="nav-link text-white">Services</a>
+                    <a href="index.html#works" class="nav-link text-white">Works</a>
+                    <a href="index.html#experience" class="nav-link text-white">Experience</a>
+                    <a href="index.html#skills" class="nav-link text-white">Skills</a>
+                    <a href="index.html#blog" class="nav-link text-white">Blog</a>
+                    <a href="index.html#contact" class="nav-link text-white">Contact</a>
+                </div>
+                <a href="index.html#contact" class="btn-hover px-6 py-2 rounded-full gradient-bg text-white font-medium shadow-glow">Let's Work</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Works Section -->
+    <main class="py-16 md:py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-10">All Works</h1>
+            <div id="all-works-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Work cards will be loaded here -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Same footer as index.html -->
+    <footer class="py-8 border-t border-light">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <p class="text-caption">
+                    © <span id="currentYear"></span> <span id="footer-name">Transcendent</span>. All rights reserved.
+                </p>
+                <div id="socials-container-footer" class="flex space-x-6 mt-4 md:mt-0"></div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS Files -->
+    <script src="all-works.js"></script>
+
+     <!-- Load our custom script -->
+    <script src="app.js"></script>
+
+    <!-- Existing utility scripts -->
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
